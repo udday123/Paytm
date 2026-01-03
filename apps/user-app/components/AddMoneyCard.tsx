@@ -43,9 +43,9 @@ export const AddMoney = ({ userId }: { userId: string }) => {
     const simulateBankApproval = async () => {
         setStep("WEBHOOK_SENDING");
 
-        // Simulating the backend-to-backend call from the bank to our webhook
+        // Simulating the bank-to-server call using our internal API route
         try {
-            const response = await fetch("http://localhost:3003/hdfcWebhook", {
+            const response = await fetch("/api/webhook/hdfc", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"
@@ -163,8 +163,8 @@ export const AddMoney = ({ userId }: { userId: string }) => {
 function StepItem({ title, status, description }: { title: string, status: "pending" | "active" | "done", description: string }) {
     return <div className="flex gap-4 items-start">
         <div className={`mt-1 w-6 h-6 rounded-full flex items-center justify-center shrink-0 border-2 transition-colors duration-300 ${status === "done" ? "bg-green-500 border-green-500 text-white" :
-                status === "active" ? "border-indigo-500 text-indigo-500 animate-pulse" :
-                    "border-slate-700 text-slate-700"
+            status === "active" ? "border-indigo-500 text-indigo-500 animate-pulse" :
+                "border-slate-700 text-slate-700"
             }`}>
             {status === "done" ? <CheckIcon small /> : <div className="w-2 h-2 rounded-full bg-current" />}
         </div>
