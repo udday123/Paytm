@@ -12,22 +12,30 @@ Since this is a Turborepo monorepo, you need to set up **three separate projects
 - **Root Directory**: `apps/user-app`
 - **Framework Preset**: Next.js
 - **Environment Variables**:
-  - `DATABASE_URL`: Your database connection string.
-  - `NEXTAUTH_SECRET`: A random string for authentication.
-  - `NEXTAUTH_URL`: The URL where this app will be deployed.
+  ```env
+  DATABASE_URL="your_neon_or_supabase_url_here"
+  JWT_SECRET="your_random_secret_here"
+  NEXTAUTH_SECRET="your_random_secret_here"
+  NEXTAUTH_URL="https://your-deployment-url.vercel.app"
+  ```
 
 ## 2. Merchant App (`merchant-app`)
 - **Root Directory**: `apps/merchant-app`
 - **Framework Preset**: Next.js
 - **Environment Variables**:
-  - `DATABASE_URL`: Same as above.
-  - `NEXTAUTH_SECRET`: Same as above.
+  ```env
+  DATABASE_URL="your_neon_or_supabase_url_here"
+  JWT_SECRET="your_random_secret_here"
+  NEXTAUTH_SECRET="your_random_secret_here"
+  ```
 
 ## 3. Bank Webhook (`bank-webhook`)
 - **Root Directory**: `apps/bank-webhook`
 - **Framework Preset**: Other (it will detect `vercel.json`)
 - **Environment Variables**:
-  - `DATABASE_URL`: Same as above.
+  ```env
+  DATABASE_URL="your_neon_or_supabase_url_here"
+  ```
 
 ---
 
