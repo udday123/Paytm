@@ -31,7 +31,9 @@ Since this is a Turborepo monorepo, you need to set up **three separate projects
 
 ## 3. Bank Webhook (`bank-webhook`)
 - **Root Directory**: `apps/bank-webhook`
-- **Framework Preset**: Other (it will detect `vercel.json`)
+- **Framework Preset**: Other
+- **Build Command**: `npm run build`
+- **Output Directory**: Override this and set it to `.` (just a dot)
 - **Environment Variables**:
   ```env
   DATABASE_URL="your_neon_or_supabase_url_here"
